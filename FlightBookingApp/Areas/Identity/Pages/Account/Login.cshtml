@@ -1,0 +1,382 @@
+﻿@page
+
+@model LoginModel
+
+@{
+
+    ViewData["Title"] = "Log in";
+
+}
+
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Login Form </title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 5;
+            padding:;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        .bg-img {
+            background: url('data:image/jpeg;base64,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');
+            height: 100vh;
+            background-size: cover;
+            height: 120vh;
+            background-position: center;
+            position: relative;
+        }
+
+            .bg-img:after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.7);
+            }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 999;
+            text-align: center;
+            padding: 37px 32px;
+            width: 370px;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+        }
+
+            .content header {
+                color: white;
+                font-size: 33px;
+                font-weight: 600;
+                margin: 0 0 35px 0;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+        .field {
+            position: relative;
+            height: 45px;
+            width: 100%;
+            display: flex;
+            background: rgba(255, 255, 255, 0.94);
+        }
+
+            .field span {
+                color: #222;
+                width: 40px;
+                line-height: 45px;
+            }
+
+            .field input {
+                height: 100%;
+                width: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                color: #222;
+                font-size: 16px;
+                font-family: 'Poppins', sans-serif;
+            }
+
+        .space {
+            margin-top: 10px;
+        }
+
+        .show {
+            position: absolute;
+            right: 13px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #222;
+            display: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .pass-key:valid ~ .show {
+            display: block;
+        }
+
+        .pass {
+            text-align: left;
+            margin: 10px 0;
+        }
+
+            .pass a {
+                color: white;
+                text-decoration: none;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .pass:hover a {
+                text-decoration: underline;
+            }
+
+        .field input[type="submit"] {
+            background: #3498db;
+            border: 1px solid #2691d9;
+            color: white;
+            font-size: 18px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+            .field input[type="submit"]:hover {
+                background: #2691d9;
+            }
+
+        .login {
+            color: white;
+            margin: 20px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .links {
+            display: flex;
+            cursor: pointer;
+            color: white;
+            margin: 0 0 20px 0;
+        }
+
+        .Twitter,
+        .Email {
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            margin-left: 10px;
+        }
+
+        .Twitter {
+            margin-left: 0;
+            background: #4267B2;
+            border: 1px solid #3e61a8;
+        }
+
+        .Email {
+            background: #E1306C;
+            border: 1px solid #df2060;
+        }
+
+        .Twitter:hover {
+            background: #3e61a8;
+        }
+
+        .Email:hover {
+            background: #df2060;
+        }
+
+        .links i {
+            font-size: 17px;
+        }
+
+        i span {
+            margin-left: 8px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .signup {
+            font-size: 15px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+            .signup a {
+                color: #3498db;
+                text-decoration: none;
+            }
+
+                .signup a:hover {
+                    text-decoration: underline;
+                }
+
+    </style>
+
+</head>
+<body>
+
+    <div class=" bg-img">
+
+        <div class="content">
+
+            <header>Login form</header>
+
+            <form id="account" method="post">
+
+                <hr />
+
+@*                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+ *@
+                <div class="field">
+
+                    <span class=" fa fa-user"></span>
+
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="enter your username or email"/>
+
+                    @* <label asp-for="Input.Email" class="form-label"></label> *@
+
+                    @*    <span asp-validation-for="Input.Email" class="text-danger"></span> *@
+
+                </div>
+
+                <br />
+
+                <div class="field space">
+
+                    <span class="fa fa-lock"></span>
+
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="enter your password"/>
+
+                    @* <label asp-for="Input.Password" class="form-label"></label>
+
+                    <span asp-validation-for="Input.Password" class="text-danger"></span> *@
+
+                </div>
+
+                <br />
+
+                <div>
+
+                    <div class="checkbox">
+
+                        <label asp-for="Input.RememberMe" class="form-label">
+
+                            <input class="form-check-input" asp-for="Input.RememberMe" />
+
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary" style="background-color:navy;">Log in</button>
+
+                </div>
+
+                <br />
+
+                <h2>
+
+                    <a style="color:white" ; asp-controller="Admin" asp-action="login" class="w-100 btn btn-lg btn-primary" style="background-color:navy;">
+
+                        <i class=" fas fa-user"></i>&emsp;Login as Admin
+
+                    </a>
+
+                </h2>
+
+            </form>
+
+            <div class="login">
+
+                Or login with
+
+            </div>
+
+            <div class="links">
+
+                <div class="Twitter">
+
+                    <i class="fab fa-Twitter-f"><span>Twitter</span></i>
+
+                </div>
+
+                <div class="Email">
+
+                    <i class="fab fa-Email"><span>Email</span></i>
+
+                </div>
+
+            </div>
+
+            <div class="signup">
+
+                Don't have an account?
+
+                <p>
+
+                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">signup now</a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const pass_field = document.querySelector('.pass-key');
+
+        const showBtn = document.querySelector('.show');
+
+        showBtn.addEventListener('click', function () {
+
+            if (pass_field.type === "password") {
+
+                pass_field.type = "text";
+
+                showBtn.textContent = "HIDE";
+
+                showBtn.style.color = "#3498db";
+
+            } else {
+
+                pass_field.type = "password";
+
+                showBtn.textContent = "SHOW";
+
+                showBtn.style.color = "#222";
+
+            }
+
+        });
+
+    </script>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+
+    @section Scripts {
+
+        <partial name="_ValidationScriptsPartial" />
+
+    }
+
+</body>
+
+</html>

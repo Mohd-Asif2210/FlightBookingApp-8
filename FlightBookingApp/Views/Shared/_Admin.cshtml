@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/css/bootstrap.css" rel='stylesheet' type='text/css' />
+
+    <!-- Custom CSS -->
+    <link href="~/css/style.css" rel='stylesheet' type='text/css' />
+
+    <!-- font-awesome icons CSS -->
+    <link href="~/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome icons CSS-->
+    <!-- side nav css file -->
+    <link href='~/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- //side nav css file -->
+    <!-- js-->
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <script src="~/js/modernizr.custom.js"></script>
+
+    <!--webfonts-->
+    <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <!--//webfonts-->
+    <!-- chart -->
+    <script src="~/js/Chart.js"></script>
+    <!-- //chart -->
+    <!-- Metis Menu -->
+    <script src="~/js/metisMenu.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    <link href="~/css/custom.css" rel="stylesheet">
+    <!--//Metis Menu -->
+    <style>
+        #chartdiv {
+            width: 100%;
+            height: 295px;
+        }
+    </style>
+    <!--pie-chart --><!-- index page sales reviews visitors pie chart -->
+    <script src="~/js/pie-chart.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    </script>
+    <!-- //pie-chart --><!-- index page sales reviews visitors pie chart -->
+    <!-- requried-jsfiles-for owl -->
+    <link href="~/css/owl.carousel.css" rel="stylesheet">
+    <script src="~/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#owl-demo").owlCarousel({
+                items : 3,
+                lazyLoad : true,
+                autoPlay : true,
+                pagination : true,
+                nav:true,
+            });
+        });
+    </script>
+    <!-- //requried-jsfiles-for owl -->
+</head>
+<body class="cbp-spmenu-push">
+
+    <div class="main-content">
+ <div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+            <!--left-fixed -navigation-->
+            <aside class="sidebar-left">
+                <nav class="navbar navbar-inverse">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><a class="navbar-brand" href="index.html"><span class="fa fa-area-chart"></span> JX Travels<span class="dashboard_text">Navigate Your World</span></a></h1>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="sidebar-menu">
+                            <li class="header">MAIN NAVIGATION</li>
+                            <li class="treeview">
+                                 <a asp-controller="Admin" asp-action="Dashboard"> 
+                                    <i class="fa fa-dashboard"></i><span>My Admin Panel</span>
+                                 </a>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-laptop"></i>
+                                    <span>AirLines</span>
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li class="fa fa-angle-right">@Html.ActionLink("Add", "login", "Admin")</li>
+                                    @* <li><a href="~/Views/Admin/login.cshtml"><i class="fa fa-angle-right"></i> Add</a></li> *@
+                                    <li><a href="media.html"><i class="fa fa-angle-right"></i> View Details</a></li>
+                                    
+                                </ul>
+                            </li>
+                           
+                            
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-laptop"></i>
+                                    <span>Flights</span>
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>@Html.ActionLink("Add Flight", "Create", "Flights")</li>
+                                    @* <li><a href="general.html"><i class="fa fa-angle-right"></i> Add</a></li> *@
+									@* <li><a href="icons.html"><i class="fa fa-angle-right"></i> View Details</a></li> *@
+                                    <li>@Html.ActionLink("View Details", "Index", "Flights")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="widgets.html">
+                                    <i class="fa fa-th"></i> <span>Users</span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+            </aside>
+        </div>
+        </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <div class="footer">
+        <p>&copy; Flight Booking. All Rights Reserved |</p>
+    </div>
+    <!--//footer-->
+    
+
+    <!-- new added graphs chart js-->
+
+    <script src="js/Chart.bundle.js"></script>
+    <script src="js/utils.js"></script>
+
+    <script>
+       
+    </script>
+    <!-- new added graphs chart js-->
+    <!-- Classie --><!-- for toggle left push menu script -->
+    <script src="~/js/classie.js"></script>
+    <script>
+        var menuLeft = document.getElementById('cbp-spmenu-s1'),
+            showLeftPush = document.getElementById('showLeftPush'),
+            body = document.body;
+
+        showLeftPush.onclick = function () {
+            classie.toggle(this, 'active');
+            classie.toggle(body, 'cbp-spmenu-push-toright');
+            classie.toggle(menuLeft, 'cbp-spmenu-open');
+            disableOther('showLeftPush');
+        };
+
+
+        function disableOther(button) {
+            if (button !== 'showLeftPush') {
+                classie.toggle(showLeftPush, 'disabled');
+            }
+        }
+    </script>
+    <!-- //Classie --><!-- //for toggle left push menu script -->
+    <!--scrolling js-->
+    <script src="~/js/jquery.nicescroll.js"></script>
+    <script src="~/js/scripts.js"></script>
+    <!--//scrolling js-->
+    <!-- side nav js -->
+    <script src='~/js/SidebarNav.min.js' type='text/javascript'></script>
+    <script>
+        $('.sidebar-menu').SidebarNav()
+    </script>
+    <!-- //side nav js -->
+    <!-- for index page weekly sales java script -->
+    <script src="~/js/SimpleChart.js"></script>
+    <script>
+       
+
+    </script>
+    <!-- //for index page weekly sales java script -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/js/bootstrap.js"> </script>
+    <!-- //Bootstrap Core JavaScript -->
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

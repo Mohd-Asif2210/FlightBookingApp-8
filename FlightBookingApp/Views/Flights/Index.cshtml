@@ -1,0 +1,176 @@
+﻿@model IEnumerable<FlightBookingApp.Models.Flight>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px; /* Adjust font size */
+            color: goldenrod; /*color for heading */
+            border-bottom: 2px solid #007bff; /* Blue border bottom */
+            padding-bottom: 10px; /* Add some space below the heading */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .btn {
+            margin-right: 5px;
+        }
+
+        .admin-header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .logout-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .btn:hover {
+            text-decoration: underline;
+        }
+
+
+        .table-header {
+            color: lightseagreen;
+            background-color: AliceBlue;
+        }
+
+        .table_items {
+            color: black;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        header {
+            background-color: goldenrod;
+            color: white;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 28%;
+        }
+    </style>
+
+    <header class="admin-header">
+
+        <nav id="z1">
+            <a asp-controller="Admin" asp-action="Index"><b style="color:white" ;>ADMIN DASHBOARD</b></a> - Flight Details
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <a asp-controller="Admin" asp-action="login" class="btn btn-warning logout-link">Log Out</a>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        <br />
+        <table>
+            <thead class="table-header">
+                <tr>
+                    <th>Airline</th>
+                    <th>Economy Price</th>
+                    <th>Business Price</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Departure Date</th>
+                    <th>Departure Time</th>
+                    <th>Number of Stops</th>
+                    <th>Available Economy Seats</th>
+                    <th>Available Business Seats</th>
+                    @*                     <th>Round Trip</th>
+                    <th>Multi City</th> *@
+                    <th>Actions</th> <!-- Added column for actions -->
+                </tr>
+            </thead>
+            <tbody class="table_items">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.AirLine)</td>
+                        <td>₹ @Html.DisplayFor(modelItem => item.EconomyPrice)</td>
+                        <td>₹ @Html.DisplayFor(modelItem => item.BusinessPrice)</td>
+                        <td>@Html.DisplayFor(modelItem => item.From)</td>
+                        <td>@Html.DisplayFor(modelItem => item.To)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DepartureDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DepartureTime)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NoOfStops)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AvailableEconomySeats)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AvailableBusinessSeats)</td>
+                        @* <td>@Html.DisplayFor(modelItem => item.IsRoundTrip)</td>
+                    <td>@Html.DisplayFor(modelItem => item.IsMultiCity)</td> *@
+
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.FlightId" class="btn btn-warning" title="Edit this flight" style="text-decoration:none"> Edit </a>
+                            <br />
+                            <br />
+                            <a asp-action="Delete" asp-route-id="@item.FlightId" class=" btn btn-danger" title="Delete this flight" style="text-decoration:none">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS (ensure this script is included at the bottom of the body for better performance) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <br />
+    <br />
+
+
+    <footer style="position:relative" ;>
+        <div style="text-align:left;">
+
+            &copy; JX Travels All rights reserved
+
+        </div>
+
+    </footer>
+</body>
+</html>

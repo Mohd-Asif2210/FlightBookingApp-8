@@ -1,0 +1,31 @@
+﻿/* styles.css */
+
+.card {
+    border: none;
+}
+
+.card-header {
+    border-radius: 0;
+}
+
+.card-body {
+    border-radius: 0;
+}
+
+.btn-primary {
+    background-color: chartreuse;
+    border-color: chartreuse;
+}
+
+    .btn-primary:hover {
+        background-color: chartreuse;
+        border-color: #0056b3;
+    }
+
+.bg-primary {
+    background-color: chartreuse !important;
+}
+
+.text-primary {
+    color: chartreuse !important;
+}

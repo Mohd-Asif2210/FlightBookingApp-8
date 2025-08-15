@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offers | Flight Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        .wrapper {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, #fff, #f2f2f2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+ 
+        .wrapper:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(to bottom, #f0faff, #e0f7ff);
+        }
+ 
+        .title {
+            text-align: center;
+            color: #333;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+ 
+        .offer-info {
+            text-align: center;
+            color: #555;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+ 
+        .benefits {
+            text-align: left;
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+ 
+        .steps {
+            text-align: center;
+            color: #666;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+ 
+        .btn-container {
+            text-align: center;
+        }
+ 
+        .btn {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2196f3;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+ 
+        .btn:hover {
+            background-color: #0f6fca;
+            transform: scale(1.05);
+        }
+ 
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            z-index: -1;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+ 
+        .btn:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+ 
+        /* Additional Wrappers */
+        .wrapper-2 {
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, #fff, #f2f2f2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+ 
+        @@keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+ 
+        .wrapper-2:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(to bottom, #f0faff, #e0f7ff);
+        }
+ 
+        .title-2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ff5722;
+        }
+ 
+        .content-2 {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        li{
+            list-style-type : none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">Special Offers</div>
+        <div class="offer-info">Explore our current special offers and discounts for your next flight booking.</div>
+        <div class="benefits">
+            <div><strong>Benefits:</strong></div>
+            <ul>
+                <li>Discounted fares on selected routes.</li>
+                <li>Extra baggage allowance for certain ticket types.</li>
+                <li>Complimentary in-flight meals for business class bookings.</li>
+                <li>Exclusive access to airport lounges for premium bookings.</li>
+            </ul>
+        </div>
+        <div class="steps">Follow these simple steps to avail the offers:</div>
+        <div class="btn-container">
+            <a href="#" class="btn">Check Available Offers</a>
+        </div>
+    </div>
+ 
+    <div class="wrapper-2">
+        <div class="title-2">How to Avail Offers</div>
+        <div class="content-2">
+            <ol>
+                <li>Visit our website and select your desired destination and travel dates.</li>
+                <li>Choose the flights eligible for special offers.</li>
+                <li>During checkout, apply the relevant promo code if applicable.</li>
+                <li>Complete your booking and enjoy the benefits!</li>
+            </ol>
+        </div>
+    </div>
+ 
+    <div class="wrapper-2">
+        <div class="title-2">Best Time to Avail Offers</div>
+        <div class="content-2">
+            <p>Our special offers are limited-time deals. Book early to get the best prices and availability.</p>
+        </div>
+    </div>
+ 
+    <div class="wrapper-2">
+        <div class="title-2">Benefits of Availing Offers</div>
+        <div class="content-2">
+            <ul>
+                <li>Save money with discounted fares.</li>
+                <li>Enjoy additional perks like extra baggage allowance and in-flight meals.</li>
+                <li>Access exclusive benefits for premium bookings.</li>
+                <li>Flexible booking options with easy modifications and cancellations.</li>
+            </ul>
+        </div>
+    </div>
+ 
+    <div class="wrapper-2">
+        <div class="title-2">Book Now for Exciting Offers!</div>
+        <div class="content-2">
+            <p>Don't miss out on our limited-time special offers. Book your flights today and experience travel at its best!</p>
+        </div>
+        <div class="btn-container">
+            <a href="#" class="btn">Book Now</a>
+        </div>
+    </div>
+</body>
+</html>

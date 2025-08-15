@@ -1,0 +1,211 @@
+﻿
+@{
+    ViewData["Title"] = "Payment Confirmation";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .wrapper:hover {
+                transform: translateY(-5px);
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+            }
+
+        .thank-you {
+            text-align: center;
+            color: #4caf50; /* Green color for a positive vibe */
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+            .thank-you:hover {
+                color: #198754; /* Green shade on hover */
+            }
+
+        .message {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 30px;
+            transition: opacity 0.3s ease;
+        }
+
+            .message:hover {
+                color: #6c757d; /* Gray shade on hover */
+            }
+
+        .additional-info {
+            text-align: center;
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 40px;
+            transition: opacity 0.3s ease;
+        }
+
+            .additional-info:hover {
+                color: #0d6efd; /* Blue shade on hover */
+            }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2196f3; /* Blue color for a fresh look */
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .btn:hover {
+                background-color: #0f6fca; /* Darker blue on hover */
+                transform: scale(1.05);
+            }
+
+            .btn::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 300%;
+                height: 300%;
+                background-color: rgba(255, 255, 255, 0.2);
+                transition: all 0.3s ease;
+                z-index: -1;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            .btn:hover::before {
+                width: 100%;
+                height: 100%;
+            }
+
+        /* Additional Wrappers */
+        .wrapper-2 {
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .wrapper-2:hover {
+                transform: translateY(-5px);
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+            }
+
+        .title-2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ff5722; /* Orange color for energy */
+            transition: color 0.3s ease;
+        }
+
+            .title-2:hover {
+                color: #c41c00; /* Darker orange on hover */
+            }
+
+        .content-2 {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+            transition: opacity 0.3s ease;
+        }
+
+            .content-2:hover {
+                color: #6c757d; /* Gray shade on hover */
+            }
+
+        .love-symbol {
+            display: block;
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ff3333; /* Red color for love */
+            transition: color 0.3s ease;
+        }
+
+            .love-symbol:hover {
+                color: #cc0000; /* Darker red on hover */
+            }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="thank-you">Thank You for Booking!</div>
+        <div class="message">Your booking has been confirmed. You can check your Ticket in my Bookings</div>
+        <div class="additional-info">We appreciate your business and look forward to welcoming you onboard again. Explore more below:</div>
+        <div class="btn-container">
+            <a class="btn" asp-area="" asp-controller="Booking" asp-action="BookingHistory">View My Bookings</a>
+            <a class="btn" asp-area="" asp-controller="Booking" asp-action="SearchForm">Return to Home</a>
+        </div>
+    </div>
+
+    <div class="wrapper-2">
+        <div class="title-2">Plant Trees, Build Future</div>
+        <div class="content-2">Help us in our mission to create a greener future by planting trees. Every tree counts!</div>
+    </div>
+
+    <div class="wrapper-2">
+        <div class="title-2">Donate Funds for Helping Needs</div>
+        <div class="content-2">Your contributions can make a significant difference in the lives of those in need. Support our cause today!</div>
+    </div>
+
+    <div class="wrapper-2">
+        <div class="title-2">Our Future Missions and Contributions</div>
+        <div class="content-2">Discover our ongoing and upcoming projects aimed at a better tomorrow. Be part of something meaningful!</div>
+    </div>
+
+    <div class="wrapper-2">
+        <div class="title-2">We Strive for Wonderful Experiences</div>
+        <div class="content-2">Explore how we aim to provide better experiences for a brighter future. Our commitment to excellence ensures memorable journeys.</div>
+    </div>
+
+    <div class="wrapper-2">
+        <div class="title-2">Thank You for Spending Time</div>
+        <div class="content-2">Explore facts and steps you can take for a brighter and sustainable future. Together, we can make a positive impact on the world.</div>
+        <div class="love-symbol">&#10084;&#65039;</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+﻿@model FlightBookingApp.ViewModels.SearchViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search</title>
+    
+    <link rel="stylesheet" href="~/css//hpstyle.css" />
+</head>
+<body>
+    <div class="back"><img src="/images/homebg.png" alt="makemytrip.com" style="clip-path: circle(110% at 50% -50%);height: 350px;width: 1116px;z-index:-1; border-radius: 20px; position: relative;display: inline-block;size: cover;background-position:center"></div>
+    <section class="aa">
+        <h2 class="bb">Search Flights</h2>
+        @using (Html.BeginForm("SearchFlights", "Booking", FormMethod.Get, new { @class = "search-form" }))
+        {
+            <div class="cc">
+                <div class="dd">
+                    <label for="fromCity" class="ee">From</label>
+                    @Html.DropDownList("fromCity", ViewBag.FromCities as SelectList, "Select City", new { @class = "ff" })
+                </div>
+                <div class="dd">
+                    <label for="toCity" class="ee">To</label>
+                    @Html.DropDownList("toCity", ViewBag.ToCities as SelectList, "Select City", new { @class = "ff" })
+                </div>
+                <div class="dd">
+                    <label for="departureDate" class="ee" >Departure Date</label>
+                    @Html.TextBox("departureDate", "", new { type = "date", @class = "ff", id = "departureDate" })
+                </div>
+            </div>
+            <div class="cc">
+                <div>
+                    <label for="isRoundTrip" class="ee">@Html.CheckBox("isRoundTrip") Round Trip</label>
+                </div>
+                <div class="dd">
+                    <label for="isMultiCity" class="eee">@Html.CheckBox("isMultiCity") Multi City</label>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" class="ii">Search Flights</button>
+            </div>
+        }
+    </section>
+
+
+    <section class="memories">
+        <div class="section_memories__container">
+          <div class="memories__header">
+            <h2 class="section__header">
+              Travel to make memories all around the world
+            </h2>
+            @* <button class="view__all">View All</button> *@
+          </div>
+          <div class="memories__grid">
+            <div class="memories__card">
+              <span class="feature1"></span>
+              <h4>Book & relax</h4>
+              <p>
+                With "Book and Relax," you can sit back, unwind, and enjoy the
+                journey while we take care of everything else.
+              </p>v
+            </div>
+            <div class="memories__card">
+              <span class="feature2"></span>
+              <h4>Smart Checklist</h4>
+              <p>
+                Introducing Smart Checklist with us, the innovative solution
+                revolutionizing the way you travel with our airline.
+              </p>
+            </div>
+            <div class="memories__card">
+              <span class="feature3"></span>
+              <h4>Pay the way you want</h4>
+              <p>
+                Flexible payment options tailored to your preferences, providing convenience and freedom to choose how you pay.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="popularairlines">
+        <div class="P4RxUNxdU1f3oCkcA6jw">
+            <div class="de_TmPmxBqKG1JmlDRwU">
+                <div class="B1uX9MdJmRTuULKDuonr">Popular Airlines in India</div>
+                <div class="PVENCOW4uE76r_kFXjt3">Book cheap flights on your favourite airlines</div>
+            </div>
+            <div class="lwvIgp6JMSfFKihEAxXR">
+                <a class="a1ov9jeMaY0e3DPycLA4" href="" target="_blank" rel="noreferrer">
+                    <img src="https://assets.wego.com/image/upload/h_64,c_fit,f_auto,fl_lossy,q_auto:low/v210820200/flights/airlines_rectangular/6E.png" alt="IndiGo">
+                </a>
+                <a class="a1ov9jeMaY0e3DPycLA4" href="/airlines/air-india-ai" target="_blank" rel="noreferrer">
+                    <img src="https://assets.wego.com/image/upload/h_64,c_fit,f_auto,fl_lossy,q_auto:low/v210820200/flights/airlines_rectangular/6E.png" alt="Air India">
+                </a>
+                <a class="a1ov9jeMaY0e3DPycLA4" href="/airlines/spicejet-sg" target="_blank" rel="noreferrer">
+                    <img src="https://assets.wego.com/image/upload/h_64,c_fit,f_auto,fl_lossy,q_auto:low/v210820200/flights/airlines_rectangular/SG.png" alt="SpiceJet">
+                </a>
+                <a class="a1ov9jeMaY0e3DPycLA4" href="/airlines/vistara-uk" target="_blank" rel="noreferrer">
+                    <img src="https://assets.wego.com/image/upload/h_64,c_fit,f_auto,fl_lossy,q_auto:low/v210820200/flights/airlines_rectangular/UK.png" alt="Vistara">
+                </a>
+                <a class="a1ov9jeMaY0e3DPycLA4" href="/airlines/air-india-express-252-i5" target="_blank" rel="noreferrer">
+                    <img src="https://assets.wego.com/image/upload/h_64,c_fit,f_auto,fl_lossy,q_auto:low/v210820200/flights/airlines_rectangular/I5.png" alt="Air India Express">
+                </a><a class="a1ov9jeMaY0e3DPycLA4" href="/airlines/flydubai-fz" target="_blank" rel="noreferrer">
+                    <img src="https://assets.wego.com/image/upload/h_64,c_fit,f_auto,fl_lossy,q_auto:low/v210820200/flights/airlines_rectangular/FZ.png" alt="flydubai">
+                </a>
+                <a class="a1ov9jeMaY0e3DPycLA4" href="/airlines/air-arabia-g9" target="_blank" rel="noreferrer">
+                    <img src="https://assets.wego.com/image/upload/h_64,c_fit,f_auto,fl_lossy,q_auto:low/v210820200/flights/airlines_rectangular/G9.png" alt="Air Arabia ">
+                </a>
+                <a class="a1ov9jeMaY0e3DPycLA4" href="/airlines/air-india-express-ix" target="_blank" rel="noreferrer">
+                    <img src="https://assets.wego.com/image/upload/h_64,c_fit,f_auto,fl_lossy,q_auto:low/v210820200/flights/airlines_rectangular/IX.png" alt="Air India Express">
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="travelpartners">
+        <div class="QBZxV2ptO5TRgWDd2odA">
+            <div class="qu9atT0b_74jxqCumg3w">
+                <div class="RcYY9NAfV_tlTv8f_8V1" style="font-size: 24px; font-weight: 600; line-height: 28px;">
+                    Our Travel Partners
+                </div>
+                <div class="uZ4Gi6Gyhc8Qe5MhTuKA">JX Travels searches for the best deals on these sites in India</div>
+            </div>
+            <div class="je297L9ulhn3WHlGEAm9">
+                <div class="l9xxdKcOo3uJJvpjC3dZ">
+                    <img src="/images/TP1.png" alt="travomint.com">
+                </div>
+                <div class="l9xxdKcOo3uJJvpjC3dZ">
+                    <img src="/images/TP2.png" alt="tripodeal.com">
+                </div>
+                <div class="l9xxdKcOo3uJJvpjC3dZ">
+                    <img src="/images/TP3.jpg" alt="makemytrip.com">
+                </div>
+                <div class="l9xxdKcOo3uJJvpjC3dZ">
+                    <img src="/images/TP4.jpg" alt="budgetticket.in">
+                </div>
+                <div class="l9xxdKcOo3uJJvpjC3dZ">
+                    <img src="/images/TP5.jpg" alt="goibibo.com">
+                </div>
+                <div class="l9xxdKcOo3uJJvpjC3dZ">
+                    <img src="/images/TP6.jpg" alt="cleartrip.com">
+                </div>
+                <div class="l9xxdKcOo3uJJvpjC3dZ">
+                    <img src="/images/TP7.jpg" alt="happyfares.in">
+                </div>
+                <div class="l9xxdKcOo3uJJvpjC3dZ">
+                    <img src="/images/TP8.jpg" alt="yatra.com">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section__container travellers__container">
+        <h2 class="best_traverllers_header">Best travellers of the month</h2>
+        <div class="travellers__grid">
+            <div class="travellers__card">
+                <img class="travelller1" src="/images/traveldestination1.jpg" alt="traveller" style="width: 100%;" />
+                <div class="travellers__card__content">
+                    <img class="travelller1_img" src="/images/traveller1.jpg" alt="client" />
+                    <h4>Emily Johnson</h4>
+                    <p>Dubai</p>
+                </div>
+            </div>
+            <div class="travellers__card">
+                <img class="travelller1" src="/images/traveldestination2.jpg" alt="traveller" style="width: 100%;" />
+                <div class="travellers__card__content">
+                    <img class="travelller1_img" src="/images/traveller2.jpg" alt="client" />
+                    <h4>David Smith</h4>
+                    <p>Paris</p>
+                </div>
+            </div>
+            <div class="travellers__card">
+                <img src="/images//traveldestination3.jpg" alt="traveller" style="width: 100%;" />
+                <div class="travellers__card__content">
+                    <img class="travelller1_img" src="/images/traveller3.jpg" alt="client" />
+                    <h4>Olivia Brown</h4>
+                    <p>Singapore</p>
+                </div>
+            </div>
+            <div class="travellers__card">
+                <img src="/images/traveldestination4.jpg" alt="traveller" style="width: 100%;" />
+                <div class="travellers__card__content">
+                    <img class="travelller1_img" src="/images/traveller4.jpg" alt="client" />
+                    <h4>Daniel Taylor</h4>
+                    <p>Malaysia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="downlaodApp">
+        <div class="flightappinside">
+            <!-- <img src="https://i.pinimg.com/736x/3f/55/92/3f5592761388d3643987c60d8cfbccf4.jpg"> -->
+            <img class="mobileapp" src="/images/MobileAppImage.png">
+        </div>
+        <div class="QR">
+            <img class="QRimg" src="/images/qrimage.png">
+        </div>
+    </section>
+</body>
+<script>
+    // Get the input element by its ID
+    var departureDateInput = document.getElementById('departureDate');
+
+    // Get the current date
+    var currentDate = new Date();
+
+    // Set the minimum date attribute to the current date
+    departureDateInput.min = currentDate.toISOString().split('T')[0];
+
+</script>
+</html>

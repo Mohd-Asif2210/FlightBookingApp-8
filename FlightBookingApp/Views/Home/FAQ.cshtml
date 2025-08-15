@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "FAQ";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - JXTravels</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading styles */
+        h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* FAQ styles */
+        .faq-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e1e1e1;
+            padding-bottom: 20px;
+        }
+
+            .faq-item:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            .faq-item h3 {
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: black; /* Blue color for question */
+            }
+
+            .faq-item p {
+                margin-bottom: 15px;
+                font-size: 18px;
+                color: #555;
+                line-height: 1.5;
+            }
+
+                .faq-item p a {
+                    color: #007bff; /* Blue color for links within answers */
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                }
+
+                    .faq-item p a:hover {
+                        color: #0056b3; /* Darker blue color on hover */
+                        text-decoration: underline;
+                    }
+
+        /* Styling for FAQ categories */
+        .category {
+            margin-top: 40px;
+        }
+
+            .category h2 {
+                font-size: 28px;
+                color: #333;
+                margin-bottom: 20px;
+                border-bottom: 2px solid #007bff; /* Blue border bottom for category headings */
+                padding-bottom: 5px;
+            }
+
+        /* Styling for alert message */
+        .alert {
+            background-color: #f8d7da; /* Red alert background color */
+            color: #721c24; /* Dark red alert text color */
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frequently Asked Questions (FAQ)</h1>
+
+        <div class="category">
+            <h2>Booking Information</h2>
+            <div class="faq-item">
+                <h3>How do I book a flight on JXTravels?</h3>
+                <p>To book a flight, simply visit our website, enter your travel details including destination, dates, and number of passengers, and choose from available flight options.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is it possible to cancel or modify my booking?</h3>
+                <p>Yes, you can cancel or modify your booking depending on the fare rules and conditions associated with your ticket. Please refer to our <a href="#">cancellation policy</a> for more information.</p>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Payment and Refunds</h2>
+            <div class="faq-item">
+                <h3>What payment methods are accepted?</h3>
+                <p>We accept various payment methods including credit cards, debit cards, net banking, and digital wallets. You can choose your preferred payment option during the checkout process.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How long does it take to receive a refund?</h3>
+                <p>Refunds are processed within [number] business days from the cancellation date. The actual refund timeline may vary depending on your payment method and bank processing times.</p>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Flight Status and Support</h2>
+            <div class="faq-item">
+                <h3>How do I check my flight status?</h3>
+                <p>You can check your flight status by visiting our website and entering your flight details or by using our mobile app. We provide real-time updates on flight schedules and delays.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What should I do if I encounter any issues during booking?</h3>
+                <p>If you encounter any issues during the booking process or have questions, you can contact our <a href="#">customer support team</a> for assistance. We are available 24/7 to help you.</p>
+            </div>
+        </div>
+
+        <!-- Alert message for important notice -->
+        <div class="alert">
+            <strong>Important:</strong> Due to COVID-19, travel restrictions and policies may apply. Please check our <a href="#">travel advisories</a> before booking.
+        </div>
+    </div>
+</body>
+</html>

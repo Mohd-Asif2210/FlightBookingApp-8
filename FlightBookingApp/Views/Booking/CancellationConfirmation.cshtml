@@ -1,0 +1,107 @@
+﻿
+
+@{
+    ViewData["Title"] = "Cancellation Confirmation";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .wrapper:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+        .confirmation-text {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff3d00; /* Vibrant orange color */
+            margin-bottom: 20px;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 30px;
+        }
+
+        .additional-info {
+            text-align: center;
+            font-size: 18px;
+            color: #555555;
+            margin-bottom: 40px;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f80c0c; /* Vibrant green color */
+            color: #ffffff;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+            .btn:hover {
+                background-color: #388e3c; /* Darker green on hover */
+                transform: scale(1.05);
+            }
+
+        .return-text {
+            text-align: center;
+            font-size: 18px;
+            color: #555555;
+            margin-top: 20px;
+        }
+
+        .waiting-text {
+            text-align: center;
+            font-size: 16px;
+            color: #777777;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="confirmation-text">Cancel Successful</div>
+        <div class="message">Your payment will be refunded in 4-5 business days.</div>
+        <div class="additional-info">We apologize for any inconvenience caused.</div>
+        <div class="btn-container">
+            <a asp-controller="Booking" asp-action="BookingHistory" class="btn">Return to My Bookings</a>
+        </div>
+        <div class="return-text">Come again, we are waiting for your return.</div>
+        <div class="waiting-text">We are excited to serve you again!</div>
+    </div>
+</body>
+</html>

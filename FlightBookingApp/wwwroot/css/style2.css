@@ -1,0 +1,36 @@
+﻿/* style.css */
+
+.card {
+    border: none;
+}
+
+.card-header {
+    border-radius: 0;
+}
+
+.card-body {
+    border-radius: 0;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+.bg-primary {
+    background-color: #007bff !important;
+}
+
+.text-primary {
+    color: #007bff !important;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: #fff;
+}

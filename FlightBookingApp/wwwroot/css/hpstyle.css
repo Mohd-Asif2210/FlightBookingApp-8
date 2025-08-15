@@ -1,0 +1,542 @@
+﻿
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    /* background-color: #f4f5fb; */
+    /* background-color: #f1f5f9; */
+}
+
+.nav__logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    /*color: #ffffff;*/
+     color: #0f172a; 
+    z-index: inherit;
+}
+
+nav {
+    /* max-width: 1200px; */
+    margin: auto;
+    /*padding: 1rem;*/
+    display: flex;
+    align-items: center;
+    /* justify-content :-spacebetween; */
+    justify-content: space-evenly;
+    gap: 1rem;
+    z-index: 1;
+    background-color: #dfdff5;
+}
+
+.nav__links {
+    margin-top: 20px;
+    /*padding-top: 20px;*/
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-decoration: none;
+    margin-right: 40px;
+}
+
+.link {
+    text-decoration: none;
+    color: navy;
+}
+.link a {
+    font-weight: 500;
+     color: #64748b; 
+    /*color: #ffffff;*/
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+    .link a:hover {
+        color: black
+    }
+
+@media (width < 600px) {
+    .nav__links {
+        display: none;
+    }
+}
+
+.registerlink, .loginlink {
+    padding: 0.75rem 2rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    /* background-color:#3d5cb8; */
+    background-color: navy;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+
+.hellologin {
+    padding: 0.2rem 1rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: #3d5cb8;
+    background-color: navy;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.logoutlink {
+    margin-bottom: 7px;
+    padding: 0.2rem 1rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: #3d5cb8;
+    background-color: navy;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.footer {
+    background-color: #dfdff5;
+    /* margin-left: 110px; */
+    padding-left: 110px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: 2fr repeat(2, 1fr);
+    gap: 5rem;
+}
+
+.footer__col h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: navy;
+    margin-bottom: 1rem;
+}
+
+.footer__col h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: navy;
+    margin-bottom: 1rem;
+}
+
+.footer__col p {
+    color: navy;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer__col a {
+    color: navy;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.footer__col a:hover {
+    color: black;
+}
+
+.footer__bar {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid #3d5cb8;
+}
+
+    .footer__bar p {
+        font-size: 0.9rem;
+        color: navy;
+    }
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 120px;
+}
+
+/*==========================================================================================================*/
+
+.features {
+    border-radius: 2rem;
+    border: 1px solid var(--extra-light);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature1 {
+    background-image: url(https://appinventiv.com/wp-content/uploads/2016/06/A-Detailed-Look-Into-the-Growing-Importance-of-Travel-Applications-Industry.png);
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    flex-shrink: 0;
+    height: 100px;
+    width: 100px;
+}
+
+.feature2 {
+    background-image : url(/images/feature2image.jpg);
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    flex-shrink: 0;
+    height: 100px;
+    width: 100px;
+}
+
+.feature3 {
+    background-image: url(https://cdn.vectorstock.com/i/preview-1x/99/28/hand-giving-dollar-bank-money-vector-20729928.jpg);
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    flex-shrink: 0;
+    height: 100px;
+    width: 100px;
+}
+
+.memories {
+    /* background-color: #f1f5f9; */
+    background-color: #ffffff;
+}
+
+.section_memories__container {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+} 
+.memories__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.memories__header .section__header {
+    font-weight: 700;
+    max-width: 600px;
+    align-content: center;
+}
+
+.memories__header .view__all {
+    margin-right: 20px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0f172a;
+    background: transparent;
+    white-space: nowrap;
+    outline: none;
+    border: 1px solid #64748b;
+    border-radius: 2rem;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.memories__grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+}
+
+.memories__card {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 5rem;
+    background-color: #dfdff5;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.05);
+}
+
+.memories__card span {
+    display: inline-block;
+    padding: 20px 32px;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: white;
+    background-color: #334c99;
+    border-radius: 100%;
+}
+
+.memories__card:nth-child(2) span {
+    background-color: #e98b6d;
+}
+
+.memories__card:nth-child(3) span {
+    background-color: #ffcca3;
+}
+
+.memories__card h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.memories__card p {
+    color: #64748b;
+    line-height: 1.75rem;
+}
+
+.P4RxUNxdU1f3oCkcA6jw {
+    align-items: center;
+    display: flex;
+    margin-left: 40px;
+    margin-top: 40px;
+    max-width: 1136px;
+    width: 100%;
+    align-items: center;
+}
+
+.de_TmPmxBqKG1JmlDRwU {
+    width: 35%;
+}
+
+.B1uX9MdJmRTuULKDuonr {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.PVENCOW4uE76r_kFXjt3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 8px;
+    color: #546884;
+}
+
+.lwvIgp6JMSfFKihEAxXR {
+    margin-right: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 0;
+    width: 100%;
+}
+
+.a1ov9jeMaY0e3DPycLA4 {
+    display: flex;
+    flex-grow: 1;
+    height: 32px;
+    justify-content: center;
+    width: 25%;
+}
+
+.a1ov9jeMaY0e3DPycLA4 > img {
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.QBZxV2ptO5TRgWDd2odA {
+    align-items: center;
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    max-width: 1136px;
+    width: 100%;
+}
+
+.qu9atT0b_74jxqCumg3w {
+    flex-shrink: 0;
+    width: 25%;
+}
+
+.je297L9ulhn3WHlGEAm9 {
+    margin-right: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 0;
+    width: 100%;
+    margin-left: 29px;
+}
+
+.je297L9ulhn3WHlGEAm9 .l9xxdKcOo3uJJvpjC3dZ {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    width: 25%;
+}
+
+.je297L9ulhn3WHlGEAm9 .l9xxdKcOo3uJJvpjC3dZ > img {
+    height: 32px;
+    max-width: 130px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    max-width: 90px;
+}
+
+.travellers__grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.travellers__card {
+    border-radius: 5rem;
+    overflow: hidden;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.travellers__card__content {
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+}
+
+.travelller1_img {
+    position: absolute;
+    max-width: 70px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #f1f5f9;
+    border-radius: 100%;
+    /* width: 100%; */
+}
+
+.travellers__card__content h4 {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+.best_traverllers_header {
+    margin-left: 40px;
+    font-weight: 700;
+}
+
+.downlaodApp {
+    display: flex;
+    margin-left: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.QRimg, .mobileapp {
+    height: 400px;
+}
+
+.HomeBackgroundimg {
+    width: 100%;
+    /*---- display: flex; */
+    z-index: -1;
+    height: auto;
+    position: absolute;
+    display: inline-block;
+    size: cover;
+    /* ----clip-path: circle(100% at 50% -50%); */
+    clip-path: circle(110% at 50% -50%);
+    /* background-position: center 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding: 0 32px;
+    transition: background-image 1s ease-in-out;
+    width: 100%; */
+}
+
+.aa {
+    margin: 50px auto;
+    max-width: 1100px;
+    background-color: #dfdff5f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.bb {
+    text-align: center;
+    font-weight: bold;
+    color: navy;
+    margin-bottom: 20px;
+}
+
+.cc {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.dd {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.ee {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: navy;
+}
+
+.ff,
+.gg {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.hh label {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.ii {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: white;
+    background-color: navy;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.eee {
+    margin-left:20px;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: navy;
+}
+    .ii:hover {
+        background-color: #0056b3;
+    }
+
+.back {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    position:center;
+}

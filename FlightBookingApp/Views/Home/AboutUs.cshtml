@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        <title > About Us - JX Travelling</title >
+        <style >
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+            header h1 {
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+            }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            nav ul li {
+                display: inline;
+                margin-right: 20px;
+            }
+
+                nav ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-family: 'Arial', sans-serif;
+                }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+            section h2 {
+                color: #333;
+                border-bottom: 2px solid #333;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+                font-family: 'Arial', sans-serif;
+            }
+
+            section p {
+                line-height: 1.6;
+                font-family: 'Arial', sans-serif;
+            }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1s ease;
+        }
+
+            .team-member:hover {
+                background-color: #e0e0e0;
+            }
+
+            .team-member img {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                margin-bottom: 10px;
+                border: 4px solid #fff;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .team-member:hover img {
+                transform: scale(1.05);
+            }
+
+            .team-member h3 {
+                margin: 5px 0;
+                color: #555;
+                font-family: 'Arial', sans-serif;
+            }
+
+            .team-member p {
+                color: #888;
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <nav>
+            <ul>
+                <a style="margin-top: 20px;color:white" ; asp-controller="Booking" asp-action="SearchForm" class="btn btn-success ml-auto">
+                    <i class=" fas fa-home"></i>Home Page
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>Who We Are</h2>
+            <p>JX Travelling is your one-stop destination for all your flight booking needs. Whether you're planning a business trip or a leisurely getaway, we've got you covered. Our team is dedicated to providing you with the best travel experience possible.</p>
+        </section>
+
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <p>Our mission is to make travel accessible and hassle-free for everyone. We strive to offer competitive prices, a wide range of flight options, and exceptional customer service to ensure that your journey with us is smooth and enjoyable.</p>
+        </section>
+
+        <section id="team">
+            <h2>Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="https://th.bing.com/th?id=OIP.Q95pQRcQPSO-Z1WbGRzD7wHaHX&w=250&h=249&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" Team Member" 1">
+                    <h3>Saranya</h3>
+
+                </div>
+                <div class="team-member">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyC9HBF1rktRkYPSpUlVqoH-ctJEVD-WmVVA&s" alt="Team Member 3">
+                    <h3>Asif</h3>
+
+                </div>
+                <div class="team-member">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyC9HBF1rktRkYPSpUlVqoH-ctJEVD-WmVVA&s" alt="Team Member 3">
+                    <h3>Akhil</h3>
+
+                </div>
+                <div class="team-member">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyC9HBF1rktRkYPSpUlVqoH-ctJEVD-WmVVA&s" alt="Team Member 4">
+                    <h3>Raghavendra</h3>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+
+@* <style>
+    .aboutuspara {
+        margin-bottom: 110px;
+        justify-content: left;
+    }
+</style>
+<p class="aboutuspara"> *@

@@ -1,0 +1,287 @@
+﻿@* @page
+@model RegisterModel
+
+<html>
+    <title>Sign Up</title>
+<body style="background-color:aliceblue;">
+    <div class="container py-5 h-100" style="border-radius:10px;">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;border:1px solid aqua;">
+                    <div class="card-body p-5 text-center">
+
+                        <h3 class="mb-5">Create a new account</h3>
+                        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                            <hr />
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-floating">
+                                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                                <label asp-for="Input.Email"></label>
+                                <span asp-validation-for="Input.Email" class="text-danger"></span><br />
+                            </div>
+                            <div class="form-floating">
+                                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                                <label asp-for="Input.Password"></label>
+                                <span asp-validation-for="Input.Password" class="text-danger"></span><br />
+                            </div>
+                            <div class="form-floating">
+                                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                                <label asp-for="Input.ConfirmPassword"></label>
+                                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span><br />
+                            </div>
+                            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary" style="background-color:navy;">Register</button><br />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+</html> *@
+@page
+@model RegisterModel
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Rigister  Form </title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        .bg-img {
+            background: url('https://th.bing.com/th?id=OIP.dYapTEf1_h1HKHA33vmOAQHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+            .bg-img:after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.7);
+            }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 999;
+            text-align: center;
+            padding: 37px 32px;
+            width: 370px;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+        }
+
+            .content header {
+                color: white;
+                font-size: 33px;
+                font-weight: 600;
+                margin: 0 0 35px 0;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+        .field {
+            position: relative;
+            height: 45px;
+            width: 100%;
+            display: flex;
+            background: rgba(255, 255, 255, 0.94);
+        }
+
+            .field span {
+                color: #222;
+                width: 40px;
+                line-height: 45px;
+            }
+
+            .field input {
+                height: 100%;
+                width: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                color: #222;
+                font-size: 16px;
+                font-family: 'Poppins', sans-serif;
+            }
+
+        .space {
+            margin-top: 16px;
+        }
+
+        .show {
+            position: absolute;
+            right: 13px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #222;
+            display: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .pass-key:valid ~ .show {
+            display: block;
+        }
+
+        .pass {
+            text-align: left;
+            margin: 10px 0;
+        }
+
+            .pass a {
+                color: white;
+                text-decoration: none;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .pass:hover a {
+                text-decoration: underline;
+            }
+
+        .field input[type="submit"] {
+            background: #3498db;
+            border: 1px solid #2691d9;
+            color: white;
+            font-size: 18px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+            .field input[type="submit"]:hover {
+                background: #2691d9;
+            }
+
+        .Rigister {
+            color: white;
+            margin: 20px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .links {
+            display: flex;
+            cursor: pointer;
+            color: white;
+            margin: 0 0 20px 0;
+        }
+
+        .Twitter,
+        .Email {
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            margin-left: 10px;
+        }
+
+        .Twitter {
+            margin-left: 0;
+            background: #4267B2;
+            border: 1px solid #3e61a8;
+        }
+
+        .Email {
+            background: #E1306C;
+            border: 1px solid #df2060;
+        }
+
+        .Twitter:hover {
+            background: #3e61a8;
+        }
+
+        .Email:hover {
+            background: #df2060;
+        }
+
+        .links i {
+            font-size: 17px;
+        }
+
+        i span {
+            margin-left: 8px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .signup {
+            font-size: 15px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+            .signup a {
+                color: #3498db;
+                text-decoration: none;
+            }
+
+                .signup a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <div class=" bg-img">
+        <div class="content">
+
+            <header>Create Account</header>
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-floating">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Email" class="form-label"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Input.Password" class="form-control" autocomplete=".Password" aria-required="true" />
+                    <label asp-for="Input.Password" class="form-label"></label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="ConfirmPassword" aria-required="true" />
+                    <label asp-for="Input.ConfirmPassword" class="form-label"></label>
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary" style="background-color:navy;">Register</button><br />
+            </form>
+            <div class="Rigister">
+                Or register with
+            </div>
+            <div class="links">
+                <div class="Twitter">
+                    <i class="fab fa-Twitter-f"><span>Twitter</span></i>
+                </div>
+                <div class="Email">
+                    <i class="fab fa-Email"><span>Email</span></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+</html>

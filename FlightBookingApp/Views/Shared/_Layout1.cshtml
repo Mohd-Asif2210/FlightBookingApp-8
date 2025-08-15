@@ -1,0 +1,242 @@
+﻿<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Flight Home Page</title>
+
+    <style>
+
+        body {
+            background-image: url("bgimg1.jfif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: navy;
+            color: aliceblue;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            color: aliceblue;
+            padding: 9px 0;
+            text-align: left;
+        }
+
+            nav a {
+                color: aliceblue;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+
+        section {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+        }
+
+        footer {
+            background-color: aliceblue;
+            color: navy;
+            padding: 20px;
+            text-align: right;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            height: 30%;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        .flip-card-back {
+            background-color: #2980b9;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .contain {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .btn {
+            border: none;
+            color: white;
+            padding: 12px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <a href="#"><u>JXTravels</u> </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+            <a asp-controller="Flights" asp-action="Create" class="btn btn-info">Add Flights</a>
+
+            <a asp-controller="Flights" asp-action="Index" class="btn btn-info">View Flights</a>
+
+
+                        
+
+        </nav>
+
+    </header>
+    <section>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images\img2.png" alt="Avatar" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <div class="contain">
+                        <b><input type="button" onclick="Addflight()" value="Add Flights" style="padding:10px; color:navy;" /></b>
+                    </div>
+                </div>
+            </div>
+        </div>&emsp;&emsp;&emsp;&emsp;&emsp;
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images\img1.png" alt="Avatar" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <div class="contain">
+                        <b><input type="button" onclick="Viewflight()" value="View Flights" style="padding:10px; color:navy;" /></b>
+                    </div>
+                </div>
+            </div>
+        </div>&emsp;&emsp;&emsp;&emsp;&emsp;
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images\img6.png" alt="Avatar" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <div class="contain">
+                        <b><input type="button" onclick="ViewUser()" value="View Users" style="padding:10px; color:navy;" /></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <main role="main" class="pb-3">
+
+            @RenderBody()
+
+        </main>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <section>
+        <script>
+            function Addflight() {
+                window.open("http://localhost:5107/Flights/Create")
+            }
+            function Viewflight() {
+                window.open("http://localhost:5107/Flights/Details")
+            }
+            function ViewUser() {
+                window.open("http://localhost:5107/AdminLogin/Details")
+            }
+        </script>
+
+    </section>
+
+    <footer style="position:relative">
+        <p style="text-align:left;">
+            <b>COMPANY</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<b>HELP</b><br />
+            About Us&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Help Center<br />
+            ContactUs<span style='font-size:20px;'>&#9990;</span>
+
+            -122-6454&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Privacy Policy
+        </p>
+        <hr />
+        <div style="text-align:left;">
+            <p>
+                &copy; JXTravels All rights reserved.
+                <br />
+                <br />
+                <span class="btn"><i class="fa fa-facebook"></i></span>
+                <span class="btn"><i class="fa fa-instagram"></i></span>
+                <span class="btn"><i class="fa fa-twitter"></i></span>
+            </p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <style>
+        body {
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .background-section {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+            .background-section img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(60%);
+            }
+
+        .image-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: aliceblue;
+        }
+
+            .image-overlay h1 {
+                font-size: 36px;
+                margin-bottom: 10px;
+            }
+
+            .image-overlay p {
+                font-size: 18px;
+            }
+
+        h1 {
+            font-size: 200px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .text-center {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+
+        .display-4 {
+            font-size: 3rem;
+            color: navy;
+        }
+
+
+        #z1 {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: navy;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+            .btn:hover {
+                background-color: aliceblue;
+            }
+
+        p {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <section class="background-section">
+        <img src="~/images/background.png" alt="Welcome To JX Travels" class="img" />
+        <div class="image-overlay">
+            <h1 style="font-size:50px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><b>Welcome to JX Travels</b></h1>
+            <p style="font-size:25px">Elevate Your Travel Experience</p>
+
+            <div class="text-center">
+
+                <a id ="z1" class="btn btn-success" asp-area="" asp-controller="Booking" asp-action="SearchForm">Continue</a>
+            </div>
+        </div>
+      
+    </section>
+  
+
+   
+
+
+
+</body>
+</html>

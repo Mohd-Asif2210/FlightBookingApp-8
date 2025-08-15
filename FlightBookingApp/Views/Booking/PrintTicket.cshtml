@@ -1,0 +1,152 @@
+﻿@model FlightBookingApp.Models.Booking
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JX Travels - Flight Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ticket-container {
+            width: 80%;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .ticket-heading {
+            text-align: center;
+            font-size: 28px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .details-label {
+            font-weight: bold;
+        }
+
+        .details-row {
+            margin-bottom: 10px;
+        }
+
+            .details-row span {
+                display: inline-block;
+                width: 150px;
+            }
+
+        .passenger-details, .flight-details {
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .passenger-details:last-child, .flight-details:last-child {
+                border-bottom: none;
+            }
+
+        .details-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <div class="ticket-container">
+        <h1 class="ticket-heading">Flight Ticket</h1>
+        <div class="passenger-details">
+            <table class="table">
+                <tr>
+                    <th colspan="3" style="font-weight:bold">Passenger Details</th>
+                </tr>
+                @foreach (var passenger in Model.Passengers)
+                {
+                    <tr>
+                        <td class="bg-light">Name</td>
+                        <td>@passenger.Name</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-light">Age</td>
+                        <td>@passenger.Age</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-light">Gender</td>
+                        <td>@passenger.Gender</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="flight-details">
+            <table class="table">
+                <tr>
+                    <th colspan="2" style="font-weight:bold">Flight Details</th>
+                </tr>
+                <tr>
+                    <td class="bg-light">Airline</td>
+                    <td>@Model.Flight.AirLine</td>
+                </tr>
+                <tr>
+                    <td class="bg-light">From</td>
+                    <td>@Model.Flight.From</td>
+                </tr>
+                <tr>
+                    <td class="bg-light">To</td>
+                    <td>@Model.Flight.To</td>
+                </tr>
+                <tr>
+                    <td class="bg-light">Departure Date</td>
+                    <td>@Model.Flight.DepartureDate.ToShortDateString()</td>
+                </tr>
+                <tr>
+                    <td class="bg-light">Departure Time</td>
+                    <td>@Model.Flight.DepartureTime.ToShortTimeString()</td>
+                </tr>
+                <tr>
+                    <td class="bg-light">Total Amount</td>
+                    <td>₹ @Model.TotalAmount</td>
+                </tr>
+            </table>
+        </div>
+        <div class="btn-container">
+            <button class="btn" onclick="sendTicket()">Send Ticket</button>
+            <a class="btn" asp-area="" asp-controller="Booking" asp-action="SearchForm">Return to Home</a>
+        </div>
+        <br>
+    </div>
+
+    <script>
+        function sendTicket() {
+            alert("Ticket has been sent to your registered email.");
+        }
+
+
+    </script>
+</body>
+</html>

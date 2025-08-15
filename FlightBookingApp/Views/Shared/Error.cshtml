@@ -1,0 +1,75 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .error-container {
+            width: 60%;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .error-title {
+            color: #e74c3c;
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transform: rotateX(15deg);
+        }
+
+        .error-message {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .extra-message {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .back-link:hover {
+                transform: translateY(-3px);
+                background-color: #2980b9;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }
+    </style>
+</head>
+
+<body>
+    <div class="error-container">
+        <h1 class="error-title">Error</h1>
+        <p class="error-message">An unexpected error occurred. Please try again later.</p>
+        <p class="extra-message">We are working to fix this error. Please continue browsing or try again later.</p>
+        <a asp-controller="Booking" asp-action="SearchForm" class="back-link">Go Back Home</a>
+    </div>
+</body>
+
+</html>

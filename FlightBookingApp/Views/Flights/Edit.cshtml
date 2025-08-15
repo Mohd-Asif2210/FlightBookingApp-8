@@ -1,0 +1,293 @@
+﻿
+@model FlightBookingApp.Models.Flight
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .card {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+        }
+
+        .card-header {
+            background-color: goldenrod; /*color for card header */
+            color: #fff; /* White text color */
+            border-bottom: none; /* Remove default bottom border */
+            padding: 15px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+            .card-header h4 {
+                margin: 0; /* Remove default margin */
+            }
+
+        .form-group {
+            margin-bottom: 20px; /* Add margin bottom to form groups */
+        }
+
+        .form-control {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .btn-secondary {
+            margin-top: 20px; /* Adjust margin top for back button */
+        }
+
+        .btn-primary {
+            background-color: goldenrod;
+            border-color: goldenrod;
+        }
+
+            .btn-primary:hover {
+                background-color: #daa520;
+                border-color: #daa520;
+            }
+
+        .btn-warning {
+            margin-left: 320px;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 28%;
+        }
+
+        #z1 {
+            font-family: sans-serif;
+            font-size: 20px;
+            color: white;
+            text-align: left;
+        }
+
+        .abc {
+            padding: 20px;
+            background-color: goldenrod;
+            border-radius: 30px 30px 0 0;
+            font-weight: bold;
+        }
+
+        .xyz {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="z1">
+            <a asp-controller="Admin" asp-action="Index"><b style="color:white" ;>ADMIN DASHBOARD</b></a> - Edit Flight Details
+
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <a asp-controller="Admin" asp-action="login" class="btn btn-warning">Log Out</a>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="abc">
+                        <h4 class="xyz">Edit Flight Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="Edit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="FlightId" />
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="AirLine">Airline</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="AirLine" class="form-control" value="@Model?.AirLine" />
+                                    <span asp-validation-for="AirLine" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="From">From</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="From" class="form-control" />
+                                    <span asp-validation-for="From" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="To">To</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="To" class="form-control" />
+                                    <span asp-validation-for="To" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="DepartureDate">Departure Date</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="DepartureDate" class="form-control" />
+                                    <span asp-validation-for="DepartureDate" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="DepartureTime">Departure Time</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="DepartureTime" class="form-control" />
+                                    <span asp-validation-for="DepartureTime" class="text-danger"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="EconomySeats">Economy Seats</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="EconomySeats" class="form-control" min="0" max="300" />
+                                    <span asp-validation-for="EconomySeats" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="AvailableEconomySeats">Available Economy Seats</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="AvailableEconomySeats" class="form-control" min="0" max="300" />
+                                    <span asp-validation-for="AvailableEconomySeats" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="EconomyPrice">Economy Price</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="EconomyPrice" class="form-control" />
+                                    <span asp-validation-for="EconomyPrice" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="BusinessSeats">Business Seats</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="BusinessSeats" class="form-control" min="0" max="120" />
+                                    <span asp-validation-for="BusinessSeats" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="AvailableBusinessSeats">Available Business Seats</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="AvailableBusinessSeats" class="form-control" min="0" max="120" />
+                                    <span asp-validation-for="AvailableBusinessSeats" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="BusinessPrice">Business Price</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="BusinessPrice" class="form-control" />
+                                    <span asp-validation-for="BusinessPrice" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="NoOfStops">Number of Stops</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="NoOfStops" class="form-control" />
+                                    <span asp-validation-for="NoOfStops" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="TripType">Trip Type:</label>
+                                <br />
+                                <input type="radio" id="OneWay" name="TripType" class="trip-type-option" value="OneWay">
+                                <label for="OneWay">One Way</label>
+                                <br />
+                                <input type="radio" id="RoundTrip" name="TripType" class="trip-type-option" value="RoundTrip">
+                                <label for="RoundTrip">Round Trip</label>
+                                <br />
+
+                                <input type="radio" id="MultiCity" name="TripType" class="trip-type-option" value="MultiCity">
+                                <label for="MultiCity">Multi City</label>
+                                <br>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label" asp-for="ArrivalDate">Arrival Date</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="ArrivalDate" class="form-control" />
+                                    <span asp-validation-for="ArrivalDate" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-3 offset-sm-4">
+                                    <input type="submit" value="Save" class="btn btn-primary btn-block" />
+                                </div>
+                                <div class="col-sm-3 offset-sm-4 mt-2">
+                                    <a asp-action="Index" class="btn btn-secondary btn-block">Back to List</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+    <br />
+
+    <footer style="position:relative" ;>
+        @* <p style="text-align:left;">
+        <b>COMPANY</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<b>HELP</b><br />
+        @Html.ActionLink("About Us", "AboutUs", "Home")&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;@Html.ActionLink("User Agreement", "Agreement", "Home")<br />
+        @Html.ActionLink("Contact Us", "Contactus", "Home")&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;@Html.ActionLink("  FAQ's", "FAQ", "Home")<br />
+        &emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;@Html.ActionLink("Privacy Policy", "Privacy", "Home")
+        </p>
+        <hr /> *@
+        <div style="text-align:left;">
+
+            &copy; JX Travels All rights reserved
+
+        </div>
+
+    </footer>
+</body>
+</html>

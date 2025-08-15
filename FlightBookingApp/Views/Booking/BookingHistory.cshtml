@@ -1,0 +1,67 @@
+﻿
+@model List<FlightBookingApp.Models.Booking>
+
+<head>
+    <title>My Bookings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .table-header {
+            color: lightseagreen;
+            background-color: AliceBlue;
+        }
+
+        .table_items {
+            color: black;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<h1 style="font-weight:bold;font-family:'Times New Roman';">My Bookings</h1>
+<br />
+
+<table class="table">
+    <thead class="table-header">
+        <tr style="border:2px solid #090909">
+
+            <th style="padding:10px; border:2px solid #090909">Airlines Name</th>
+            <th style="padding:10px; border:2px solid #090909">Seat Type</th>
+            <th style="padding:10px; border:2px solid #090909">From</th>
+            <th style="padding:10px; border:2px solid #090909">To</th>
+            <th style="padding:10px; border:2px solid #090909">Date of Departure</th>
+            <th style="padding:10px; border:2px solid #090909">No of Passengers</th>
+            <th style="padding:10px; border:2px solid #090909">Total Amount</th>
+            <th style="padding:10px; border:2px solid #090909">Passengers Deatils</th>
+            <th style="padding:10px; border:2px solid #090909">Cancel</th>
+        </tr>
+    </thead>
+    <tbody class="table_items">
+        @foreach (var booking in Model)
+        {
+            <tr style="background-color:#f4f4f4">
+
+                <td style="padding:10px; border:2px solid #090909">@booking.Flight.AirLine</td>
+                <td style="padding:10px; border:2px solid #090909">@booking.SeatType</td>
+                <td style="padding:10px; border:2px solid #090909">@booking.Flight.From</td>
+                <td style="padding:10px; border:2px solid #090909">@booking.Flight.To</td>
+                <td style="padding:10px; border:2px solid #090909">@booking.Flight.DepartureDate.ToShortDateString()</td>
+                <td style="padding:10px; border:2px solid #090909">@booking.NumberOfPassengers</td>
+                <td style="padding:10px; border:2px solid #090909">₹ @booking.TotalAmount</td>
+                <td style="padding:10px; border:2px solid #090909">
+                    <ol>
+                        @foreach (var passenger in booking.Passengers)
+                        {
+                            <li>@passenger.Name - @passenger.Age - @passenger.Gender</li>
+                        }
+                    </ol>
+                </td>
+                <td style="padding:10px; border:2px solid #090909">
+
+                    <a asp-action="PrintTicket" asp-route-bookingId="@booking.bId" class="btn btn-success" title="Print this flight ticket" style="margin-bottom:5px;">Ticket</a>
+                    <form method="post" asp-action="Cancel" asp-route-bookingId="@booking.bId">
+                        <button type="submit" class="btn btn-danger" title="Cancel this flight ticket">Cancel</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

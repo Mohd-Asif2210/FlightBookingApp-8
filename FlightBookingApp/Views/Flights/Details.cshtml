@@ -1,0 +1,102 @@
+﻿@model FlightBookingApp.Models.Flight
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link rel="icon" type="image/x-icon" href="~/favicon2.ico" />
+
+</head>
+<body>
+
+    <div>
+        <h4>Flight</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AirLine)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AirLine)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.EconomySeats)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.EconomySeats)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BusinessSeats)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BusinessSeats)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.EconomyPrice)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.EconomyPrice)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BusinessPrice)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BusinessPrice)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.From)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.From)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.To)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.To)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DepartureDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DepartureDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DepartureTime)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DepartureTime)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NoOfStops)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NoOfStops)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AvailableEconomySeats)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AvailableEconomySeats)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AvailableBusinessSeats)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AvailableBusinessSeats)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.FlightId">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Flight Home Page</title>
+
+    <style>
+
+        body {
+            background-image: url("bgimg1.jfif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: navy;
+            color: aliceblue;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            color: aliceblue;
+            padding: 9px 0;
+            text-align: left;
+        }
+
+            nav a {
+                color: aliceblue;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+
+        section {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+        }
+
+        footer {
+            background-color: grey;
+            color: #fff;
+            padding: 10px;
+            text-align: right;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 23%;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .contain {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .btn {
+            border: none;
+            color: white;
+            padding: 12px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <a href="#"><u>JXTravels</u> </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <a href="http://localhost:5107/Flights/Create" class="btn btn-info">Add Flights</a> &emsp;
+
+            <a href="http://localhost:5107/Flights/Details" class="btn btn-info">View Flights</a> &emsp;
+
+            <a href="http://localhost:5107/AdminLogin/Details" class="btn btn-info">View Users</a> &emsp;
+
+            <span style='font-size:25px;'>&#128075;</span><b>Hello Admin</b>
+            <!--&#10068;-->
+
+        </nav>
+
+    </header>
+
+
+    <div class="container">
+
+        <main role="main" class="pb-3">
+
+            @RenderBody()
+
+        </main>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <footer>
+        <p style="text-align:left;">
+            <b>COMPANY</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<b>HELP</b><br />
+            About Us&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Help Center<br />
+            ContactUs<span style='font-size:20px;'>&#9990;</span>
+
+            -122-6454&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Privacy Policy
+        </p>
+        <hr />
+        <div style="text-align:left;">
+            <p>
+                &copy; JXTravels All rights reserved.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <span class="btn"><i class="fa fa-facebook"></i></span>
+                <span class="btn"><i class="fa fa-instagram"></i></span>
+                <span class="btn"><i class="fa fa-twitter"></i></span>
+            </p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

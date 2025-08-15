@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightBookingApp", "FlightBookingApp.csproj", "{C8B74529-94E7-4EFD-8982-EF1CF7171D9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightBookTesting", "..\FlightBookTesting\FlightBookTesting.csproj", "{D00E7234-6221-4EF2-B4F3-6CB4066FB4DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8B74529-94E7-4EFD-8982-EF1CF7171D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8B74529-94E7-4EFD-8982-EF1CF7171D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8B74529-94E7-4EFD-8982-EF1CF7171D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8B74529-94E7-4EFD-8982-EF1CF7171D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D00E7234-6221-4EF2-B4F3-6CB4066FB4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D00E7234-6221-4EF2-B4F3-6CB4066FB4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D00E7234-6221-4EF2-B4F3-6CB4066FB4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D00E7234-6221-4EF2-B4F3-6CB4066FB4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {846677DF-F290-4977-A62E-1C5A4E4F2275}
+	EndGlobalSection
+EndGlobal

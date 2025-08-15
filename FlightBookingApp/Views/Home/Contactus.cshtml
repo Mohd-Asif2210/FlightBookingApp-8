@@ -1,0 +1,183 @@
+﻿@page
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        .contact-info {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+            .contact-info p {
+                color: #666;
+                margin-bottom: 10px;
+            }
+
+                .contact-info p a {
+                    color: #4CAF50;
+                    text-decoration: none;
+                }
+
+                    .contact-info p a:hover {
+                        text-decoration: underline;
+                    }
+
+        .social-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+            .social-links a {
+                display: inline-block;
+                margin: 0 10px;
+                color: #333;
+                font-size: 20px;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+                .social-links a:hover {
+                    color: #4CAF50;
+                }
+
+        .hover-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .hover-item {
+            flex: 0 0 30%;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+            .hover-item:hover {
+                background-color: #e0e0e0;
+            }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Contact Us</h1>
+        <form id="contactForm">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label>Your Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label>Your Message</label>
+                <textarea id="message" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="submitForm()">Send Message</button>
+            </div>
+        </form>
+        <div class="contact-info">
+            <p>For support, contact us at <a href="tel:+123456789">+123456789</a></p>
+            <div class="social-links">
+                <a target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank"><i class="fab fa-twitter"></i></a>
+                <a target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="hover-wrapper">
+            <div class="hover-item">
+                <h3><a asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a></h3>
+                <p>Find answers to common questions.</p>
+            </div>
+            <div class="hover-item">
+                <h3><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a></h3>
+                <p>Learn about our privacy practices.</p>
+            </div>
+            <div class="hover-item">
+                <h3><a asp-area="" asp-controller="Home" asp-action="Agreement">Terms of Service</a></h3>
+                <p>Read our terms and conditions.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Font Awesome CDN for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        function submitForm() {
+            alert('Thank you for submitting! We will get in touch soon.');
+            document.getElementById('contactForm').reset(); // Reset the form after alert
+        }
+    </script>
+</body>
+</html>
